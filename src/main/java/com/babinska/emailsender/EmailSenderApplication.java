@@ -1,5 +1,6 @@
-package com.babinska.EmailSender;
+package com.babinska.emailsender;
 
+import com.babinska.emailsender.email.EmailSenderService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
