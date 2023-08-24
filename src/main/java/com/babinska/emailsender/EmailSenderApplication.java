@@ -9,6 +9,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @RequiredArgsConstructor
 public class EmailSenderApplication {
 
+	private final EmailSenderService senderService;
+
 	public static void main(String[] args) {
 		SpringApplication.run(EmailSenderApplication.class, args);
 	}
