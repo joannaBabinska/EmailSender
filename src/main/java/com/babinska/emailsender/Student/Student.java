@@ -1,11 +1,19 @@
 package com.babinska.emailsender.Student;
 
-import lombok.Builder;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import lombok.*;
 
+@Entity
+@Getter
+@Setter
 @Builder
-public record Student(
-        String firstName,
-        String lastName,
-        String email) {
+@NoArgsConstructor
+@AllArgsConstructor
+public class Student{
+  @Id
+  private Long id;
+  private String firstName;
+  private String lastName;
+  private String email;
 }
-

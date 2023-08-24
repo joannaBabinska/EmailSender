@@ -1,6 +1,7 @@
 package com.babinska.emailsender.mq;
 
 import com.babinska.emailsender.Student.Student;
+import com.babinska.emailsender.Student.dto.StudentBasicDto;
 import com.babinska.emailsender.email.EmailSenderService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -15,7 +16,7 @@ public class RabbitMQJsonConsumer {
   private final EmailSenderService emailSenderService;
 
   @RabbitListener(queues = {"${rabbitmq.queue.json.name}"})
-  public void sendWelcomeEmail(Student student){
+  public void sendWelcomeEmail(StudentBasicDto student){
     log.info("Send welcome email :" + student.toString());
     emailSenderService.sendEmail(DEV_EMAIL, "Welcome email", student.toString());
   }
